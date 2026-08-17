@@ -1,8 +1,6 @@
 # Neural Network from Scratch — Iris Classification
 
-**MIT Academy of Engineering, Alandi, Pune**
-Department of CSE (AI/ML) | Course: Generative AI Lab
-Practice Lab Assignment 1 — Individual Lab Task
+This project is a from-scratch implementation of a feedforward neural network, built as part of a Generative AI lab assignment to understand how deep learning actually works under the hood. Instead of relying on frameworks like TensorFlow or PyTorch, every core component — forward propagation, backpropagation, and gradient descent — is coded manually using just NumPy.
 
 ---
 
@@ -13,8 +11,8 @@ This repository contains a **feedforward neural network implemented entirely fro
 | | |
 |---|---|
 | **Student** | Sneha Chaurasia |
-| **PRN** | *(fill in)* |
-| **Class / Batch** | T.Y. Tech, *(batch)* |
+| **PRN** | 202401110046 |
+| **Class / Batch** | T.Y. Tech, *(A3)* |
 | **Course** | Generative AI Lab |
 | **Dataset** | [Iris Dataset](https://archive.ics.uci.edu/dataset/53/iris) (UCI ML Repository) |
 | **Task** | Multi-class classification (3 classes) |
@@ -74,16 +72,56 @@ Input Layer          Hidden Layer          Output Layer
 ## 🔄 Training Pipeline
 
 ```
-┌───────────────┐     ┌────────────────┐     ┌──────────────────┐     ┌─────────────────┐
+┌───────────────┐     ┌────────────────┐     ┌───────────────────┐     ┌──────────────────┐
 │  Load & Split │ ──► │  Forward Pass  │ ──► │  Compute Loss     │ ──► │  Backward Pass   │
 │  Iris Dataset │     │  (ReLU+Softmax)│     │  (Cross-Entropy)  │     │  (Backprop)      │
-└───────────────┘     └────────────────┘     └──────────────────┘     └─────────────────┘
+└───────────────┘     └────────────────┘     └───────────────────┘     └──────────────────┘
                                                                                 │
-┌───────────────┐     ┌────────────────┐     ┌──────────────────┐             │
-│   Evaluate     │ ◄── │  Repeat for    │ ◄── │  Update Weights   │ ◄──────────┘
+┌────────────────┐     ┌────────────────┐     ┌────────────────────┐            │
+│   Evaluate     │ ◄── │  Repeat for    │ ◄── │  Update Weights    │ ◄──────────┘
 │   on Test Set  │     │  N Epochs      │     │  (Gradient Descent)│
-└───────────────┘     └────────────────┘     └──────────────────┘
+└────────────────┘     └────────────────┘     └────────────────────┘
 ```
+
+---
+
+Loss Function: Categorical Cross-Entropy Optimizer: Batch Gradient Descent Learning Rate: 0.1 Epochs: 1000
+
+## 📈 Results
+
+Trained for 1000 epochs on an 80/20 train-test split (120 training samples, 30 test samples).
+
+| Metric | Value |
+|---|---|
+| Final Training Loss (Epoch 1000) | 0.0482 |
+| Final Training Accuracy | 97.50% |
+| **Test Accuracy** | **100.00%** |
+| Test Precision / Recall / F1 (all classes) | 1.00 / 1.00 / 1.00 |
+
+The model converges smoothly, with loss dropping sharply in the first ~150 epochs and training accuracy stabilizing around 97.5% by epoch ~300. All 30 test samples (10 per class) were classified correctly.
+
+**Training Loss over Epochs**
+
+![Training Loss](images/TrainingLossoverEpochs.png)
+
+**Training Accuracy over Epochs**
+
+![Training Accuracy](images/TrainingAccuracyvsEpochs.png)
+
+**Confusion Matrix — Test Set**
+
+![Confusion Matrix](images/confusionmatrix.png)
+
+The confusion matrix is a perfect diagonal (10/10/10) — every test sample from all three classes (*setosa*, *versicolor*, *virginica*) was predicted correctly, with zero misclassifications.
+
+---
+
+## 🧠 Key Implementation Details
+
+- **Weight Initialization:** He initialization (suited for ReLU activations)
+- **Forward Pass:** `Z1 = X·W1 + b1 → A1 = ReLU(Z1) → Z2 = A1·W2 + b2 → A2 = Softmax(Z2)`
+- **Backward Pass:** Chain rule applied manually; softmax + cross-entropy gradient simplifies to `dZ2 = A2 - Y`
+- **Confusion Matrix:** built manually from scratch using NumPy (no sklearn dependency for this step)
 
 ---
 
@@ -95,12 +133,11 @@ generative-ai-lab-nn-from-scratch/
 ├── README.md                                       ← this file
 ├── Sneha_Chaurasia_GenAILabAssignment.ipynb         ← main notebook
 ├── iris.data                                        ← dataset (CSV, no header)
-├── requirements.txt                                 ← Python dependencies
 │
 └── images/
-    ├── loss_curve.png                                ← training loss plot
-    ├── accuracy_curve.png                             ← training accuracy plot
-    └── confusion_matrix.png                           ← test set confusion matrix
+    ├── TrainingLossoverEpochs.png                                ← training loss plot
+    ├── TrainingAccuracyvsEpochs.png                             ← training accuracy plot
+    └── confusionmatrix.png                           ← test set confusion matrix
 ```
 
 ---
@@ -136,35 +173,6 @@ jupyter
 
 ---
 
-## 📈 Results
-
-| Metric | Value |
-|---|---|
-| Training Epochs | 1000 |
-| Final Training Accuracy | *(fill in after running)* |
-| Test Accuracy | *(fill in after running)* |
-| Loss Function | Categorical Cross-Entropy |
-
-**Training Loss Curve**
-`images/loss_curve.png`
-
-**Training Accuracy Curve**
-`images/accuracy_curve.png`
-
-**Confusion Matrix (Test Set)**
-`images/confusion_matrix.png`
-
----
-
-## 🧠 Key Implementation Details
-
-- **Weight Initialization:** He initialization (suited for ReLU activations)
-- **Forward Pass:** `Z1 = X·W1 + b1 → A1 = ReLU(Z1) → Z2 = A1·W2 + b2 → A2 = Softmax(Z2)`
-- **Backward Pass:** Chain rule applied manually; softmax + cross-entropy gradient simplifies to `dZ2 = A2 - Y`
-- **Confusion Matrix:** built manually from scratch using NumPy (no sklearn dependency for this step)
-
----
-
 ## ✅ Submission Checklist
 
 - [x] Code file (Jupyter Notebook)
@@ -177,6 +185,8 @@ jupyter
 
 ## 📝 Declaration
 
-I, **Sneha Chaurasia**, confirm that the work submitted in this repository is my own and has been completed following academic integrity guidelines.
-
+I confirm that the work submitted in this repository is my own and has been completed following academic integrity guidelines.
+**Name:** Sneha Chaurasia
+**PRN:** 202401110046
+**Batch:** CSE(AIML) - A3
 **GitHub Repository Link:** *(https://github.com/Sneha529-oss/GenAI_Lab_Assignment_NerualNetwork)*
