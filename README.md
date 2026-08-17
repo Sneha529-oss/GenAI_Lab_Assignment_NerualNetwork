@@ -74,12 +74,12 @@ Input Layer          Hidden Layer          Output Layer
 ```
 ┌───────────────┐     ┌────────────────┐     ┌───────────────────┐     ┌──────────────────┐
 │  Load & Split │ ──► │  Forward Pass  │ ──► │  Compute Loss     │ ──► │  Backward Pass   │
-│  Iris Dataset │     │  (ReLU+Softmax)│     │  (Cross-Entropy)  │     │  (Backprop)      │
+│  Iris Dataset │     │(ReLU + Softmax)│     │  (Cross-Entropy)  │     │   (Backprop)     │
 └───────────────┘     └────────────────┘     └───────────────────┘     └──────────────────┘
                                                                                 │
 ┌────────────────┐     ┌────────────────┐     ┌────────────────────┐            │
 │   Evaluate     │ ◄── │  Repeat for    │ ◄── │  Update Weights    │ ◄──────────┘
-│   on Test Set  │     │  N Epochs      │     │  (Gradient Descent)│
+│   on Test Set  │     │  N Epochs      │     │ (Gradient Descent) │
 └────────────────┘     └────────────────┘     └────────────────────┘
 ```
 
@@ -186,7 +186,11 @@ jupyter
 ## 📝 Declaration
 
 I confirm that the work submitted in this repository is my own and has been completed following academic integrity guidelines.
+
 **Name:** Sneha Chaurasia
+
 **PRN:** 202401110046
+
 **Batch:** CSE(AIML) - A3
-**GitHub Repository Link:** *(https://github.com/Sneha529-oss/GenAI_Lab_Assignment_NerualNetwork)*
+
+**GitHub Repository Link:** [https://github.com/Sneha529-oss/GenAI_Lab_Assignment_NerualNetwork]*(https://github.com/Sneha529-oss/GenAI_Lab_Assignment_NerualNetwork)*
