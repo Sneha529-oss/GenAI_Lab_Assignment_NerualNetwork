@@ -102,15 +102,15 @@ The model converges smoothly, with loss dropping sharply in the first ~150 epoch
 
 **Training Loss over Epochs**
 
-![Training Loss](images/TrainingLossoverEpochs.png)
+![Training Loss](TrainingLossoverEpochs.png)
 
 **Training Accuracy over Epochs**
 
-![Training Accuracy](images/TrainingAccuracyvsEpochs.png)
+![Training Accuracy](TrainingAccuracyvsEpochs.png)
 
 **Confusion Matrix — Test Set**
 
-![Confusion Matrix](images/confusionmatrix.png)
+![Confusion Matrix](confusionmatrix.png)
 
 The confusion matrix is a perfect diagonal (10/10/10) — every test sample from all three classes (*setosa*, *versicolor*, *virginica*) was predicted correctly, with zero misclassifications.
 
@@ -193,4 +193,4 @@ I confirm that the work submitted in this repository is my own and has been comp
 
 **Batch:** CSE(AIML) - A3
 
-**GitHub Repository Link:** [https://github.com/Sneha529-oss/GenAI_Lab_Assignment_NerualNetwork]*(https://github.com/Sneha529-oss/GenAI_Lab_Assignment_NerualNetwork)*
+**GitHub Repository Link:** *(https://github.com/Sneha529-oss/GenAI_Lab_Assignment_NerualNetwork)*
