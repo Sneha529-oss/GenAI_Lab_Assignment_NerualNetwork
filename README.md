@@ -4,7 +4,7 @@ This project is a from-scratch implementation of a feedforward neural network, b
 
 ---
 
-## Overview
+## • Overview
 
 This repository contains a **feedforward neural network implemented entirely from scratch in Python** — using only NumPy for the math — with no deep learning libraries (no TensorFlow, PyTorch, or Keras). It covers the full pipeline: forward propagation, backpropagation, and gradient descent, trained on the classic Iris dataset.
 
@@ -19,7 +19,7 @@ This repository contains a **feedforward neural network implemented entirely fro
 
 ---
 
-## 🎯 Objective
+## • Objective
 
 Implement a simple feedforward neural network from scratch, focusing on:
 - Forward pass (weighted sums + activations)
@@ -41,7 +41,7 @@ Implement a simple feedforward neural network from scratch, focusing on:
 
 ---
 
-## 🏗️ Network Architecture
+## • Network Architecture
 
 ```
 Input Layer          Hidden Layer          Output Layer
@@ -69,7 +69,7 @@ Input Layer          Hidden Layer          Output Layer
 
 ---
 
-## 🔄 Training Pipeline
+## • Training Pipeline
 
 ```
 ┌───────────────┐     ┌────────────────┐     ┌───────────────────┐     ┌──────────────────┐
@@ -116,7 +116,7 @@ The confusion matrix is a perfect diagonal (10/10/10) — every test sample from
 
 ---
 
-## 🧠 Key Implementation Details
+## - Key Implementation Details
 
 - **Weight Initialization:** He initialization (suited for ReLU activations)
 - **Forward Pass:** `Z1 = X·W1 + b1 → A1 = ReLU(Z1) → Z2 = A1·W2 + b2 → A2 = Softmax(Z2)`
