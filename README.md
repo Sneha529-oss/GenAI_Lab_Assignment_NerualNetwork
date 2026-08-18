@@ -4,7 +4,7 @@ This project is a from-scratch implementation of a feedforward neural network, b
 
 ---
 
-## 📌 Overview
+## * Overview
 
 This repository contains a **feedforward neural network implemented entirely from scratch in Python** — using only NumPy for the math — with no deep learning libraries (no TensorFlow, PyTorch, or Keras). It covers the full pipeline: forward propagation, backpropagation, and gradient descent, trained on the classic Iris dataset.
 
