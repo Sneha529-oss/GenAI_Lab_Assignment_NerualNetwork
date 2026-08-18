@@ -28,9 +28,9 @@ Implement a simple feedforward neural network from scratch, focusing on:
 
 ---
 
-## 📊 Dataset
+## 🔹Dataset
 
-**Iris Dataset** — [https://archive.ics.uci.edu/dataset/53/iris](https://archive.ics.uci.edu/dataset/53/iris)
+**Iris Dataset 📊** — [https://archive.ics.uci.edu/dataset/53/iris](https://archive.ics.uci.edu/dataset/53/iris)
 
 | Property | Value |
 |---|---|
@@ -183,7 +183,7 @@ jupyter
 
 ---
 
-## • Declaration
+## 🔹 Declaration
 
 I confirm that the work submitted in this repository is my own and has been completed following academic integrity guidelines.
 
